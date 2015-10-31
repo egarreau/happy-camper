@@ -1,14 +1,11 @@
-var happyCamper = angular.module('happyCamper', []);
+var happyCamper = angular.module('happyCamper', ['ngMessages']);
 
 
 happyCamper.controller('camperController', function($scope){
     $scope.create = function(camper, isValid){
       if (isValid){
         $scope.camperCard = angular.copy(camper);
-        $scope.showCard = true;
-        angular.element(".card").addClass("animate flipInX");
-        angular.element("button").addClass("animate slideOutDown");
-
+        $scope.successfulSubmission = true;
       };
     };
   });

@@ -76,3 +76,11 @@ form.ng-submitted input.ng-invalid {
 #camper-avatar{
   max-width: 150px;
 }
+
+.icon-people:hover {
+  animation: tada 1s;
+}
+
+header span:hover{
+  animation: swing 1s;
+}

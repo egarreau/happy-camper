@@ -14,12 +14,12 @@
 </head>
 
 <body ng-app="happyCamper">
-  <header><i class="icon-map"> </i>HappyCamper</header>
+  <header><span><i class="icon-map"> </i>HappyCamper</span></header>
   <div class="hero valign-wrapper">
     <h1 class="valign"><i class="icon-people"> </i>Add your camping team</h1>
   </div>
   <div class="row" ng-controller="camperController">
-    <div class="col s6">
+    <div class="col s7">
       <form name="camperForm" novalidate ng-submit="create(camper, camperForm.$valid)">
 
         <div class="input-field">

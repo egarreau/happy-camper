@@ -5,7 +5,10 @@ happyCamper.controller('camperController', function($scope){
     $scope.create = function(camper, isValid){
       if (isValid){
         $scope.camperCard = angular.copy(camper);
-        $scope.successfulSubmission = true;
+        $scope.camperAdded = true;
+      }
+      else{
+        $scope.tryAgain = true;
       };
     };
   });

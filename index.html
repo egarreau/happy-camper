@@ -47,12 +47,12 @@
           <input type="url" name="pic" placeholder="Link to an image" class="validate" ng-model="camper.pic" ng-model-options="{updateOn: 'submit'}" required>
         </div>
 
-        <button type="submit" class="btn-large animated" ng-class="{fadeOutDown: successfulSubmission}">Add Camper</button>
+        <button type="submit" class="btn-large animated" ng-class="{fadeOutDown: camperAdded, shake: tryAgain}">Add Camper</button>
       </form>
     </div>
 
     <div class="col s4">
-      <div ng-show="successfulSubmission" class="card animated" ng-class="{flipInX: successfulSubmission}">
+      <div ng-show="camperAdded" class="card animated" ng-class="{flipInX: camperAdded}">
         <div class="card-content white-text">
           <img ng-src="{{camperCard.pic}}" class="circle responsive-img" id="camper-avatar"></li>
           <h5>{{camperCard.firstName}} {{camperCard.lastName}}</h5>

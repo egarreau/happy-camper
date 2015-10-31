@@ -11,9 +11,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-messages.min.js"></script>
   <script src="app.js"></script>
+
+
 </head>
 
 <body ng-app="happyCamper">
+  <script type="text/ng-template" id="error-messages">
+    <p ng-message="required">This field is required</p>
+  </script>
+
+
   <header><span><i class="icon-map"> </i>HappyCamper</span></header>
   <div class="hero valign-wrapper">
     <h1 class="valign"><i class="icon-people"> </i>Add your camping team</h1>
@@ -23,28 +30,46 @@
       <form name="camperForm" novalidate ng-submit="create(camper, camperForm.$valid)">
 
         <div class="input-field">
-          <label for="first-name">First Name</label>
-          <input type="text" name="first-name" placeholder="First Name" class="validate" ng-model="camper.firstName" ng-model-options="{updateOn: 'submit'}" required>
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" placeholder="First Name" class="validate" ng-model="camper.firstName" ng-model-options="{updateOn: 'submit'}" required>
+          <div ng-messages="camperForm.firstName.$error" ng-if="camperForm.$submitted" role="alert">
+              <div ng-messages-include="error-messages"></div>
+          </div>
         </div>
 
         <div class="input-field">
-          <label for="last-name">Last Name</label>
-          <input type="text" name="last-name" placeholder="Last Name" class="validate" ng-model="camper.lastName" ng-model-options="{updateOn: 'submit'}" required>
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" placeholder="Last Name" class="validate" ng-model="camper.lastName" ng-model-options="{updateOn: 'submit'}" required>
+          <div ng-messages="camperForm.lastName.$error" ng-if="camperForm.$submitted" role="alert">
+              <div ng-messages-include="error-messages"></div>
+          </div>
         </div>
 
         <div class="input-field">
           <label for="occupation">Occupation</label>
           <input type="text" name="occupation" placeholder="Occupation" class="validate" ng-model="camper.occupation" ng-model-options="{updateOn: 'submit'}" required>
+          <div ng-messages="camperForm.occupation.$error" ng-if="camperForm.$submitted" role="alert">
+              <div ng-messages-include="error-messages"></div>
+          </div>
         </div>
 
         <div class="input-field">
           <label for="email">Email address</label>
           <input type="email" name="email" placeholder="Email address" class="validate" ng-model="camper.email" ng-model-options="{updateOn: 'submit'}" required>
+          <div ng-messages="camperForm.email.$error" ng-if="camperForm.$submitted" role="alert">
+              <p ng-message="email">This email is invalid</p>
+              <div ng-messages-include="error-messages"></div>
+          </div>
         </div>
 
         <div class="input-field">
           <label for="pic">Link to an image</label>
           <input type="url" name="pic" placeholder="Link to an image" class="validate" ng-model="camper.pic" ng-model-options="{updateOn: 'submit'}" required>
+          <div ng-messages="camperForm.pic.$error" ng-if="camperForm.$submitted" role="alert">
+              <p ng-message="url">Must be a valid URL</p>
+              <p ng-message="required">This field is required</p>
+
+          </div>
         </div>
 
         <button type="submit" class="btn-large animated" ng-class="{fadeOutDown: camperAdded, shake: tryAgain}">Add Camper</button>

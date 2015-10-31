@@ -48,7 +48,7 @@ label {
   background-color: #008ABD;
 }
 
-.btn-large:hover{
+.btn-large:hover, .btn-large:focus{
   background-color: #00688e;
   box-shadow: none;
 }

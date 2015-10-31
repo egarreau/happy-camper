@@ -25,15 +25,32 @@ label {
   display: none;
 }
 
-.input-field input[type=text], .input-field input[type=email], .input-field input[type=url]{
+.input-field input[type=text],
+.input-field input[type=email],
+.input-field input[type=url]{
   background: #fff;
   border: 1px solid #ccc;
   padding-left: 10px;
   margin: 0;
 }
 
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=url]:focus {
+  border-bottom: 1px solid #ccc;
+  box-shadow: none;
+}
+
 .btn-large{
   margin-top: 15px;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #008ABD;
+}
+
+.btn-large:hover{
+  background-color: #00688e;
+  box-shadow: none;
 }
 
 ::-webkit-input-placeholder{
@@ -45,9 +62,10 @@ form.ng-submitted input.ng-invalid {
 }
 
 .card{
-  background-color: #31495E;
+  background-color: #31455A;
   max-width: 300px;
   margin-top: 15px;
+  border-radius: 5px;
 }
 
 .card-content{

@@ -48,10 +48,9 @@ label {
 
 /* Submission Error Styling */
 .error{
-  text-align: right;
   margin-top: -34px;
   position: absolute;
-  width: 100%;
+  right: 0;
   color: #ea6559;
   animation: fadeIn 1s;
 }

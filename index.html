@@ -43,7 +43,6 @@
               type="text"
               class="validate"
               ng-model="camper.firstName"
-              ng-model-options="{updateOn: 'submit'}"
               required
             >
             <div ng-messages="camperForm.firstName.$error" ng-if="camperForm.$submitted" role="alert">
@@ -59,7 +58,6 @@
               type="text"
               class="validate"
               ng-model="camper.lastName"
-              ng-model-options="{updateOn: 'submit'}"
               required
             >
             <div ng-messages="camperForm.lastName.$error" ng-if="camperForm.$submitted" role="alert">
@@ -75,7 +73,6 @@
               type="text"
               class="validate"
               ng-model="camper.occupation"
-              ng-model-options="{updateOn: 'submit'}"
               required
             >
             <div ng-messages="camperForm.occupation.$error" ng-if="camperForm.$submitted" role="alert">
@@ -91,7 +88,6 @@
               type="email"
               class="validate"
               ng-model="camper.email"
-              ng-model-options="{updateOn: 'submit'}"
               required
             >
             <div ng-messages="camperForm.email.$error" ng-if="camperForm.$submitted" role="alert">
@@ -108,7 +104,6 @@
               placeholder="Link to an image"
               class="validate"
               ng-model="camper.pic"
-              ng-model-options="{updateOn: 'submit'}"
               required
             >
             <div ng-messages="camperForm.pic.$error" ng-if="camperForm.$submitted" role="alert">

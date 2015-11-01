@@ -16,81 +16,130 @@
 
 </head>
 
-<body ng-app="happyCamper">
-  <script type="text/ng-template" id="error-messages">
-    <div class="error" ng-message="required">This field is required</div>
-  </script>
+<body>
+  <div ng-app="happyCamper">
 
+    <!-- Required field error template -->
+    <script type="text/ng-template" id="error-messages">
+      <div class="error" ng-message="required">This field is required</div>
+    </script>
 
-  <header><span><i class="icon-map"> </i>HappyCamper</span></header>
-  <div class="hero valign-wrapper">
-    <h1 class="valign"><i class="icon-people"> </i>Add your camping team</h1>
-  </div>
-  <div class="row" ng-controller="camperController">
-    <div class="col s7">
-      <form name="camperForm" novalidate ng-submit="create(camper, camperForm.$valid)">
-
-        <div class="input-field">
-          <label for="firstName">First Name</label>
-          <input type="text" name="firstName" placeholder="First Name" class="validate" ng-model="camper.firstName" ng-model-options="{updateOn: 'submit'}" required>
-          <div ng-messages="camperForm.firstName.$error" ng-if="camperForm.$submitted" role="alert">
-              <div ng-messages-include="error-messages"></div>
-          </div>
-        </div>
-
-        <div class="input-field">
-          <label for="lastName">Last Name</label>
-          <input type="text" name="lastName" placeholder="Last Name" class="validate" ng-model="camper.lastName" ng-model-options="{updateOn: 'submit'}" required>
-          <div ng-messages="camperForm.lastName.$error" ng-if="camperForm.$submitted" role="alert">
-              <div ng-messages-include="error-messages"></div>
-          </div>
-        </div>
-
-        <div class="input-field">
-          <label for="occupation">Occupation</label>
-          <input type="text" name="occupation" placeholder="Occupation" class="validate" ng-model="camper.occupation" ng-model-options="{updateOn: 'submit'}" required>
-          <div ng-messages="camperForm.occupation.$error" ng-if="camperForm.$submitted" role="alert">
-              <div ng-messages-include="error-messages"></div>
-          </div>
-        </div>
-
-        <div class="input-field">
-          <label for="email">Email address</label>
-          <input type="email" name="email" placeholder="Email address" class="validate" ng-model="camper.email" ng-model-options="{updateOn: 'submit'}" required>
-          <div ng-messages="camperForm.email.$error" ng-if="camperForm.$submitted" role="alert">
-              <div class="error" ng-message="email">Must be a vaild email</div>
-              <div ng-messages-include="error-messages"></div>
-          </div>
-        </div>
-
-        <div class="input-field">
-          <label for="pic">Link to an image</label>
-          <input type="url" name="pic" placeholder="Link to an image" class="validate" ng-model="camper.pic" ng-model-options="{updateOn: 'submit'}" required>
-          <div ng-messages="camperForm.pic.$error" ng-if="camperForm.$submitted" role="alert">
-              <div class="error" ng-message="url">Must be a valid URL</div>
-              <div ng-messages-include="error-messages"></div>
-
-          </div>
-        </div>
-
-        <button type="submit" class="btn-large animated" ng-class="{fadeOutDown: camperAdded}">Add Camper</button>
-      </form>
+    <header><span><i class="icon-map"> </i>HappyCamper</span></header>
+    <div class="hero valign-wrapper">
+      <h1 class="valign"><i class="icon-people"> </i>Add your camping team</h1>
     </div>
 
-    <div class="col s4">
-      <div ng-show="camperAdded" class="card animated" ng-class="{flipInX: camperAdded}">
-        <div class="card-content white-text">
-          <img ng-src="{{camperCard.pic}}" class="circle responsive-img" id="camper-avatar"></li>
-          <h5>{{camperCard.firstName}} {{camperCard.lastName}}</h5>
-          <p>{{camperCard.occupation}}</p>
-          <p>{{camperCard.email}}</p>
-          </ul>
+    <div class="row" ng-controller="camperController">
+      <div class="col s7">
+
+        <!-- Form begins -->
+        <form name="camperForm" novalidate ng-submit="create(camper, camperForm.$valid)">
+
+          <div class="input-field">
+            <label for="firstName">First Name (required)</label>
+            <input
+              placeholder="First Name"
+              name="firstName"
+              type="text"
+              class="validate"
+              ng-model="camper.firstName"
+              ng-model-options="{updateOn: 'submit'}"
+              required
+            >
+            <div ng-messages="camperForm.firstName.$error" ng-if="camperForm.$submitted" role="alert">
+                <div ng-messages-include="error-messages"></div>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <label for="lastName">Last Name (required)</label>
+            <input
+              placeholder="Last Name"
+              name="lastName"
+              type="text"
+              class="validate"
+              ng-model="camper.lastName"
+              ng-model-options="{updateOn: 'submit'}"
+              required
+            >
+            <div ng-messages="camperForm.lastName.$error" ng-if="camperForm.$submitted" role="alert">
+                <div ng-messages-include="error-messages"></div>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <label for="occupation">Occupation (required)</label>
+            <input
+              placeholder="Occupation"
+              name="occupation"
+              type="text"
+              class="validate"
+              ng-model="camper.occupation"
+              ng-model-options="{updateOn: 'submit'}"
+              required
+            >
+            <div ng-messages="camperForm.occupation.$error" ng-if="camperForm.$submitted" role="alert">
+                <div ng-messages-include="error-messages"></div>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <label for="email">Email address (required)</label>
+            <input
+              placeholder="Email address"
+              name="email"
+              type="email"
+              class="validate"
+              ng-model="camper.email"
+              ng-model-options="{updateOn: 'submit'}"
+              required
+            >
+            <div ng-messages="camperForm.email.$error" ng-if="camperForm.$submitted" role="alert">
+                <div class="error" ng-message="email">Must be a vaild email</div>
+                <div ng-messages-include="error-messages"></div>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <label for="pic">Link to an image</label>
+            <input
+              type="url"
+              name="pic"
+              placeholder="Link to an image"
+              class="validate"
+              ng-model="camper.pic"
+              ng-model-options="{updateOn: 'submit'}"
+              required
+            >
+            <div ng-messages="camperForm.pic.$error" ng-if="camperForm.$submitted" role="alert">
+                <div class="error" ng-message="url">Must be a valid URL</div>
+                <div ng-messages-include="error-messages"></div>
+
+            </div>
+          </div>
+
+          <button type="submit" class="btn-large animated" ng-class="{fadeOutDown: camperAdded}">
+            Add Camper
+          </button>
+
+        </form>
+        <!-- End form -->
+
+      </div>
+
+      <div class="col s4">
+        <div ng-show="camperAdded" class="card animated" ng-class="{flipInX: camperAdded}">
+          <div class="card-content white-text">
+            <img ng-src="{{camperCard.pic}}" class="circle responsive-img" id="camper-avatar">
+            <h5>{{camperCard.firstName}} {{camperCard.lastName}}</h5>
+            <p>{{camperCard.occupation}}</p>
+            <p>{{camperCard.email}}</p>
+          </div>
         </div>
       </div>
+
     </div>
-
   </div>
-
 </body>
 
 

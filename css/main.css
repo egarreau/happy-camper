@@ -43,14 +43,10 @@ label {
 .input-field input[type=email]:focus,
 .input-field input[type=url]:focus {
   border: 1px solid #ccc;
-  box-shadow: none;
+  box-shadow: 0px 0px 3px 0px #00688e;
 }
 
-/* Invalid Submission Styling */
-form.ng-submitted input.ng-invalid {
-  border: 1px solid #ea6559;
-}
-
+/* Submission Error Styling */
 .error{
   text-align: right;
   margin-top: -34px;
@@ -65,11 +61,11 @@ form.ng-submitted input.ng-invalid {
   margin-top: 15px;
   border-radius: 0;
   box-shadow: none;
-  background-color: #008ABD;
+  background-color: #00688e;
 }
 
 .btn-large:hover, .btn-large:focus{
-  background-color: #00688e;
+  background-color: #003b50;
   box-shadow: none;
 }
 

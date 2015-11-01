@@ -7,8 +7,5 @@ happyCamper.controller('camperController', function($scope){
         $scope.camperCard = angular.copy(camper);
         $scope.camperAdded = true;
       }
-      else{
-        $scope.tryAgain = true;
-      };
     };
   });

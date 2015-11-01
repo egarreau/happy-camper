@@ -21,8 +21,13 @@ body{
   background: #EEF1F1;
 }
 
+/* Form Styling */
 label {
   display: none;
+}
+
+::-webkit-input-placeholder{
+  color: #555;
 }
 
 .input-field input[type=text],
@@ -37,10 +42,25 @@ label {
 .input-field input[type=text]:focus,
 .input-field input[type=email]:focus,
 .input-field input[type=url]:focus {
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #ccc;
   box-shadow: none;
 }
 
+/* Invalid Submission Styling */
+form.ng-submitted input.ng-invalid {
+  border: 1px solid #ea6559;
+}
+
+.error{
+  text-align: right;
+  margin-top: -34px;
+  position: absolute;
+  width: 100%;
+  color: #ea6559;
+  animation: fadeIn 1s;
+}
+
+/* Submit Button Styling */
 .btn-large{
   margin-top: 15px;
   border-radius: 0;
@@ -53,15 +73,7 @@ label {
   box-shadow: none;
 }
 
-::-webkit-input-placeholder{
-  color: #555;
-}
-
-
-form.ng-submitted input.ng-invalid {
-  border: 1px solid red;
-}
-
+/* Camper Card Styling*/
 .card{
   background-color: #31455A;
   max-width: 300px;
@@ -77,10 +89,12 @@ form.ng-submitted input.ng-invalid {
   max-width: 150px;
 }
 
+
+/* Animations */
 .icon-people:hover {
   animation: tada 1s;
 }
 
 header span:hover{
-  animation: swing 1s;
+  animation: pulse 1s;
 }

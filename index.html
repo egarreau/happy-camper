@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy Camper</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/simple-line-icons.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-messages.min.js"></script>
   <script src="app.js"></script>
 
-
 </head>
 
 <body ng-app="happyCamper">
   <script type="text/ng-template" id="error-messages">
-    <p ng-message="required">This field is required</p>
+    <div class="error" ng-message="required">This field is required</div>
   </script>
 
 
@@ -57,7 +58,7 @@
           <label for="email">Email address</label>
           <input type="email" name="email" placeholder="Email address" class="validate" ng-model="camper.email" ng-model-options="{updateOn: 'submit'}" required>
           <div ng-messages="camperForm.email.$error" ng-if="camperForm.$submitted" role="alert">
-              <p ng-message="email">This email is invalid</p>
+              <div class="error" ng-message="email">Must be a vaild email</div>
               <div ng-messages-include="error-messages"></div>
           </div>
         </div>
@@ -66,13 +67,13 @@
           <label for="pic">Link to an image</label>
           <input type="url" name="pic" placeholder="Link to an image" class="validate" ng-model="camper.pic" ng-model-options="{updateOn: 'submit'}" required>
           <div ng-messages="camperForm.pic.$error" ng-if="camperForm.$submitted" role="alert">
-              <p ng-message="url">Must be a valid URL</p>
-              <p ng-message="required">This field is required</p>
+              <div class="error" ng-message="url">Must be a valid URL</div>
+              <div ng-messages-include="error-messages"></div>
 
           </div>
         </div>
 
-        <button type="submit" class="btn-large animated" ng-class="{fadeOutDown: camperAdded, shake: tryAgain}">Add Camper</button>
+        <button type="submit" class="btn-large animated" ng-class="{fadeOutDown: camperAdded}">Add Camper</button>
       </form>
     </div>
 
